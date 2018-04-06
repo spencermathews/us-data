@@ -10,28 +10,6 @@
                 "type": "Polygon",
                 "properties":
                 {
-                    "name": "Eastern"
-                },
-                "id": "60010",
-                "arcs": [
-                    [0, 1]
-                ]
-            },
-            {
-                "type": "Polygon",
-                "properties":
-                {
-                    "name": "Western"
-                },
-                "id": "60050",
-                "arcs": [
-                    [2, -1]
-                ]
-            },
-            {
-                "type": "Polygon",
-                "properties":
-                {
                     "name": "Guam"
                 },
                 "arcs": [
