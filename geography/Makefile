@@ -70,7 +70,7 @@ zcta/state/topo: raw/zcta/state/geo
 
 # Places from US Gazetteer
 raw/zip/Gaz_place_national.zip:
-	curl 'http://www2.census.gov/geo/docs/maps-data/data/gazetteer/2015_Gazetteer/2015_Gaz_place_national.zip' -o $@.download
+	curl 'http://www2.census.gov/geo/docs/maps-data/data/gazetteer/2015_Gazetteer/2015_Gaz_place_national.zip' -o $@.download --create-dirs
 	mv $@.download $@
 	
 raw/gaz_places_national.txt: raw/zip/Gaz_place_national.zip
