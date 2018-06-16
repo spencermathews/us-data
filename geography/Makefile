@@ -4,7 +4,7 @@ clean:
 # Zip Code Tabulation Areas from Census Tiger data
 raw/zip/tl_2012_us_zcta510.zip:
 	mkdir -p $(dir $@)
-	curl 'http://www2.census.gov/geo/tiger/TIGER2012/ZCTA5/$(notdir $@)' -o $@.download
+	curl 'https://www2.census.gov/geo/tiger/TIGER2012/ZCTA5/$(notdir $@)' -o $@.download
 	mv $@.download $@
 
 raw/shp/zcta.shp: raw/zip/tl_2012_us_zcta510.zip
@@ -17,12 +17,12 @@ raw/shp/zcta.shp: raw/zip/tl_2012_us_zcta510.zip
 
 # ZCTA - County Relations
 raw/zcta_county_rel.txt:
-	curl 'http://www2.census.gov/geo/docs/maps-data/data/rel/zcta_county_rel_10.txt' -o $@.download
+	curl 'https://www2.census.gov/geo/docs/maps-data/data/rel/zcta_county_rel_10.txt' -o $@.download
 	mv $@.download $@
 
 # FIPS County names
 raw/county_fips.txt:
-	curl 'http://www2.census.gov/geo/docs/reference/codes/files/national_county.txt' -o $@.download
+	curl 'https://www2.census.gov/geo/docs/reference/codes/files/national_county.txt' -o $@.download
 	mv $@.download $@.raw
 	echo 'STATE,STATEFP,COUNTYFP,COUNTYNAME,CLASSFP' >> raw/county_fips_headers.txt
 	cat raw/county_fips_headers.txt $@.raw > $@
@@ -30,7 +30,7 @@ raw/county_fips.txt:
 
 # FIPS State / Territory names
 raw/state_fips.txt:
-	curl 'http://www2.census.gov/geo/docs/reference/state.txt' -o $@.download
+	curl 'https://www2.census.gov/geo/docs/reference/state.txt' -o $@.download
 	mv $@.download $@
 
 # ZCTA geojson for all states
